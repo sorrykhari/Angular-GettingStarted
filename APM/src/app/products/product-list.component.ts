@@ -1,17 +1,20 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
 import { IProduct } from "./products";
 import { ProductService } from "./products.service";
+import { Subscription } from "rxjs";
 
 @Component({
     selector: 'pm-products',
     templateUrl: './product-list.component.html',
     styleUrls: ['./product-list.component.css']
 })
-export class ProductListComponent implements OnInit{
+export class ProductListComponent implements OnInit, OnDestroy {
     pageTitle = 'Product List';
     imageWidth = 50;
     imageMargin: number = 2;
     showImage = false;
+    errorMessage = '';
+    sub!: Subscription; //sub! tells Typescript we will handle assignment of variable later
     
     private _listFilter: string = '';
     get listFilter(): string {
@@ -39,9 +42,19 @@ export class ProductListComponent implements OnInit{
     }
 
     ngOnInit(): void {
-        this.products = this.productService.getProducts();
-        this.filteredProducts = this.products; 
+          this.sub = this.productService.getProducts().subscribe({
+            next: products => { 
+                this.products = products;
+                this.filteredProducts = this.products; //only sets list of products when observablre emits data
+                },
+            error: err => this.errorMessage = err
+        });
+         
         this._listFilter = 'cart';
+    }
+
+    ngOnDestroy(): void {
+        this.sub.unsubscribe();
     }
 
     onRatingClicked(message: string): void {
