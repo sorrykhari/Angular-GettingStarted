@@ -31,7 +31,7 @@
                     <th>Price</th>
                     <th>5 Star Rating</th>
                 </tr>
-                <tr *ngFor='let product of products'>
+                <tr *ngFor='let product of filteredProducts'>
                     <td>
                         <img [src]='product.imageUrl'
                         *ngIf='showImage'
@@ -41,7 +41,7 @@
                         >
                     </td>
                     <td>{{product.productName}}</td>
-                    <td>{{product.productCode | lowercase}}</td>
+                    <td>{{product.productCode | lowercase | convertToSpaces: '-'}}</td>
                     <td>{{product.releaseDate}}</td>
                     <td>{{product.price | currency: 'USD' : 'symbol' : '1.2-2'}}</td>
                     <td>{{product.starRating}}</td>
