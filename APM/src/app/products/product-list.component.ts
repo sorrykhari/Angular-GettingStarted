@@ -94,11 +94,7 @@ export class ProductListComponent implements OnInit{
         product.productName.toLocaleLowerCase().includes(filterBy));
     }
 
-    starClick(): void {
-      this.clickMe = !this.clickMe
-    }
-
-    onRatingClicked(message: string): void {
-      this.pageTitle = 'Product List: ' + message;
+    starClick(starBool: boolean): void {
+      this.clickMe = starBool;
     }
 }
