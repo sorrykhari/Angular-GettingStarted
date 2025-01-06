@@ -1,3 +1,9 @@
 th {
- color: #337AB7
+ color: #337AB7;
+}
+
+.star-box {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
 }
