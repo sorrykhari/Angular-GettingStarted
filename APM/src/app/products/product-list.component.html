@@ -44,7 +44,18 @@
                     <td>{{product.productCode | lowercase | convertToSpaces: '-'}}</td>
                     <td>{{product.releaseDate}}</td>
                     <td>{{product.price | currency: 'USD' : 'symbol' : '1.2-2'}}</td>
-                    <td>{{product.starRating}}</td>
+                    <td style='cursor: pointer;'>
+                        <div *ngIf='clickMe' 
+                            (click)='starClick()'>
+                            The star rating is {{product.starRating}}
+                        </div>
+                        <pm-star
+                            (click)='starClick()'
+                            (ratingClicked)='onRatingClicked($event)'    
+                            *ngIf='!clickMe' 
+                            [rating]='product.starRating'>
+                        </pm-star>
+                    </td>
                 </tr>
             </thead>
             <tbody>

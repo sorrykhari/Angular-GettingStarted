@@ -12,6 +12,7 @@ export class ProductListComponent implements OnInit{
     imageWidth = 50;
     imageMargin = 2;
     showImage = false;
+    clickMe = false;
     
     private _listFilter: string = '';
     get listFilter(): string {
@@ -19,7 +20,6 @@ export class ProductListComponent implements OnInit{
     }
     set listFilter(value: string) {
       this._listFilter = value;
-      console.log('In setter: ', value);
       this.filteredProducts = this.performFilter(value);
     }
 
@@ -84,7 +84,7 @@ export class ProductListComponent implements OnInit{
 
     ngOnInit(): void {
         console.log('beep boom boom bop boom bop bam');
-        this.listFilter = 'cart';
+        this.listFilter = '';
 
     }
 
@@ -92,5 +92,13 @@ export class ProductListComponent implements OnInit{
       filterBy = filterBy.toLocaleLowerCase();
       return this.products.filter((product: IProduct) => 
         product.productName.toLocaleLowerCase().includes(filterBy));
+    }
+
+    starClick(): void {
+      this.clickMe = !this.clickMe
+    }
+
+    onRatingClicked(message: string): void {
+      this.pageTitle = 'Product List: ' + message;
     }
 }
