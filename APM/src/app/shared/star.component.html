@@ -1,11 +1,19 @@
-<div class="crop"
+<div *ngIf='!starClickMe'
+     class="crop"
      [style.width.px]="cropWidth"
-     [title]="rating">
-  <div style="width: 75px">
-    <span class="fa fa-star"></span>
-    <span class="fa fa-star"></span>
-    <span class="fa fa-star"></span>
-    <span class="fa fa-star"></span>
-    <span class="fa fa-star"></span>
-  </div>
+     [title]="rating"
+     (click)="onClick(); gotClicked()">
+
+      <div style="width: 75px;">
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        </div>
+   
+</div>
+<div *ngIf='starClickMe'
+       (click)="gotClicked()">
+    The star rating is {{this.rating}}
 </div>

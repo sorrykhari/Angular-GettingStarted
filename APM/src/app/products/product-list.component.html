@@ -1,37 +1,66 @@
 <div class='card'>
     <div class='card-header'>
-        Product List
+        {{pageTitle}}
     </div>
     <div class ='card-body'>
         <div class='row'>
             <div class='col-md-2'>Filter by:</div>
             <div class='col-md-4'>
-                <input type='text' />
+                <input type='text' 
+                    [(ngModel)]='listFilter'/>
             </div>
         </div>
         <div class='row'>
             <div class='col-md-6'>
-                <h4>Filtered by: </h4>
+                <h4>Filtered by: {{listFilter}}</h4>
             </div>
         </div>
     <div class='table-responsive'>
-        <thead>
-            <tr>
-                <th>
-                    <button class='btn btn  primary'>
-                        Show Image
-                    </button>
-                </th>
-                <th>Product</th>
-                <th>Code</th>
-                <th>Available</th>
-                <th>Price</th>
-                <th>5 Star Rating</th>
-            </tr>
-        </thead>
-        <tbody>
-            
-        </tbody>
+        <table class="table" *ngIf = 'products.length'>
+            <thead>
+                <tr>
+                    <th>
+                        <button class='btn btn-primary'
+                        (click)='toggleImage()'>
+                            {{showImage ? 'Hide ' : 'Show '}} Image
+                        </button>
+                    </th>
+                    <th>Product</th>
+                    <th>Code</th>
+                    <th>Available</th>
+                    <th>Price</th>
+                    <th>5 Star Rating</th>
+                </tr>
+                <tr *ngFor='let product of filteredProducts'>
+                    <td>
+                        <img [src]='product.imageUrl'
+                        *ngIf='showImage'
+                        [title]='product.productName'
+                        [style.width.px]='imageWidth'
+                        [style.margin.px]='imageMargin'
+                        >
+                    </td>
+                    <td>{{product.productName}}</td>
+                    <td>{{product.productCode | lowercase | convertToSpaces: '-'}}</td>
+                    <td>{{product.releaseDate}}</td>
+                    <td>{{product.price | currency: 'USD' : 'symbol' : '1.2-2'}}</td>
+                    <td>
+                        <div class="star-box">
+                            <pm-star
+                            (starClicked)='starClick($event)'   
+                            *ngIf='!clickMe' 
+                            [rating]='product.starRating'>
+                        </pm-star>
+                        </div>
+                        
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+       
     </div>
     </div>
 

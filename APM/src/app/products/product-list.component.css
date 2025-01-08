@@ -1,0 +1,11 @@
+th {
+ color: #337AB7;
+}
+
+.star-box {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
