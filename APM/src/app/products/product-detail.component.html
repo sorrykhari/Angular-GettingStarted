@@ -2,12 +2,28 @@
   <div class='card-header'>
     {{pageTitle + ': ' + product?.productName}}
   </div>
-  <div class="card-footer">
+  <div class='detail-container'>
+    <img class='product-image' [src]='product?.imageUrl'>
+    <div class='details'>
+      <div style='margin-top: 20px;'>Price: ${{product?.price}}</div>
+      <div>Rating: {{product?.starRating}}</div>
+      <div style='margin-bottom: 120px'
+          >This item will be available on {{product?.releaseDate}}</div>
+      <div>{{product?.bio}}</div>
+    </div> 
+  </div>
+  <div class='card-footer'>
     <button class="btn btn-outline-secondary"
             style="width: 80px;"
             (click)="onBack()">
           <i class="fa fa-chevron-left"></i>
           Back
+        </button>
+        <button class="btn btn-outline-secondary"
+            style="width: 80px;"
+            (click)="onNext()">
+          <i class="fa fa-chevron-right"></i>
+          Next
         </button>
   </div>
 </div>
