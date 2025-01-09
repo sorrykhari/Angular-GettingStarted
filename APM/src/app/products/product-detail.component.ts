@@ -56,14 +56,22 @@ loadProducts(): void {
   }
 
   onNext(): void {
-    //this.loadProducts();
     const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.ids = [];
     this.products.forEach(product => {
         this.ids.push(product.productId);
-    } );
+    });
     console.log(this.ids);
     const productIndex = this.ids.indexOf(id);
-    console.log(productIndex);
-    this.router.navigate([`/products/${this.ids[productIndex + 1]}`]);
+
+    if (productIndex >= 0 && productIndex < this.ids.length) {
+      const nextProductId = this.ids[productIndex + 1];
+      this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+        this.router.navigate(['/products', nextProductId]);
+      });
+    }
+    else {
+      console.error('Next product not found.');
+    }
   }
 }
