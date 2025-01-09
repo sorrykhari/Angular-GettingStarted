@@ -7,7 +7,8 @@
     "description": "Leaf rake with 48-inch wooden handle.",
     "price": 19.95,
     "starRating": 3.2,
-    "imageUrl": "assets/images/leaf_rake.png"
+    "imageUrl": "assets/images/leaf_rake.png",
+    "bio": "Keep your yard clean and tidy with our durable and efficient leaf rake. Featuring a wide, fan-shaped head with flexible tines, this rake is perfect for gathering leaves, grass clippings, and other debris. The lightweight, ergonomic handle ensures comfortable use, reducing strain on your back and arms. Ideal for both small gardens and large lawns, this leaf rake is a must-have tool for any homeowner looking to maintain a pristine outdoor space."
   },
   {
     "productId": 2,
@@ -17,7 +18,8 @@
     "description": "15 gallon capacity rolling garden cart",
     "price": 32.99,
     "starRating": 4.2,
-    "imageUrl": "assets/images/garden_cart.png"
+    "imageUrl": "assets/images/garden_cart.png",
+    "bio": "Make your gardening tasks easier with our versatile and sturdy garden cart. Designed with a spacious, heavy-duty bed, this cart can carry soil, plants, tools, and other garden essentials effortlessly. The pneumatic tires ensure smooth movement over various terrains, while the ergonomic handle provides comfortable control. Whether you're transporting heavy loads or organizing your garden, this garden cart is an indispensable tool for any gardener."
   },
   {
     "productId": 5,
@@ -27,7 +29,8 @@
     "description": "Curved claw steel hammer",
     "price": 8.9,
     "starRating": 4.8,
-    "imageUrl": "assets/images/hammer.png"
+    "imageUrl": "assets/images/hammer.png",
+    "bio": "Tackle your DIY projects with confidence using our reliable and durable hammer. Featuring a solid, forged steel head and a comfortable, non-slip handle, this hammer is perfect for driving nails, breaking objects, and general construction tasks. Its balanced weight ensures precise control and efficient use, making it an essential tool for both professionals and home improvement enthusiasts."
   },
   {
     "productId": 8,
@@ -37,7 +40,8 @@
     "description": "15-inch steel blade hand saw",
     "price": 11.55,
     "starRating": 3.7,
-    "imageUrl": "assets/images/saw.png"
+    "imageUrl": "assets/images/saw.png",
+    "bio": "Cut through wood, plastic, and more with ease using our high-quality saw. Featuring a sharp, durable blade and an ergonomic handle, this saw provides precise and efficient cutting for all your DIY and professional projects. Its lightweight design ensures comfortable use, while the sturdy construction guarantees long-lasting performance. Whether you're building, repairing, or crafting, this saw is an essential addition to your toolkit."
   },
   {
     "productId": 10,
@@ -47,6 +51,7 @@
     "description": "Standard two-button video game controller",
     "price": 35.95,
     "starRating": 4.6,
-    "imageUrl": "assets/images/xbox-controller.png"
+    "imageUrl": "assets/images/xbox-controller.png",
+    "bio": "Enhance your gaming experience with our advanced video game controller. Designed for precision and comfort, this controller features responsive buttons, analog sticks, and a sleek, ergonomic design that fits perfectly in your hands. With wireless connectivity and long battery life, you can enjoy uninterrupted gameplay on your favorite console or PC. Whether you're a casual gamer or a competitive player, this controller offers the performance and reliability you need to dominate your games."
   }
 ]

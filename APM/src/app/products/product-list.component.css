@@ -9,3 +9,7 @@ th {
   align-items: center;
   height: 100%;
 }
+
+.rating-header {
+  text-align: center;
+}
